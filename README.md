@@ -1,2 +1,3 @@
-# node-debt-snowball
-Node script to calculate debt repayment using the snowball method
+# node-template
+
+> GitHub template for basic node apps
