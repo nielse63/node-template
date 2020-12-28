@@ -1,1 +1,3 @@
-console.log('howdy');
+require('dotenv').config();
+
+module.exports = (input = '') => `module says: ${input}`;
