@@ -12,3 +12,7 @@
 - Testing - Minimal `jest` configuration setup
 - CI/CD - Skeleton GitHub Actions included
 - Community Files - GitHub community files are created by default
+
+## Usage
+
+Click the `Use this template` button at the top of this [repo](https://github.com/nielse63/node-template) (or [use this link](https://github.com/nielse63/node-template/generate)). Clone your repo, and run the `./setup.js`. This will replace the repo name, GitHub username, author name and email throughout the project with the your own values (read from your local git config).
