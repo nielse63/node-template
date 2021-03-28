@@ -3,26 +3,26 @@ name: Update dependencies
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron: '0 0 */5 * *'
+    - cron: '0 0 */7 * *'
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x, 15.x]
-
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '15.x'
       - run: |
-          npm update
-          git config --global user.name "github-actions"
-          git config --global user.email "actions@github.com"
+          .bin/update-deps
           git add package.json package-lock.json
-          git commit -m 'chore: updating dependencies'
-          git push
+          npm test
+          npm run lint
+          npm start
+      - name: Commit & Push changes
+        uses: actions-js/push@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
