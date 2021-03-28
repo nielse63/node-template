@@ -6,6 +6,15 @@ const exec = require('./helpers/exec');
 const paths = require('./helpers/paths');
 const pkg = require('../package.json');
 
+const installDeps = async () => {
+  const nodeModulesPath = path.join(paths.ROOT, 'node_modules');
+  if (!fs.existsSync(nodeModulesPath)) {
+    log.info('Installing node modules');
+    await exec('npm ci');
+    log.success('Node dependencies installed');
+  }
+};
+
 const getGithubUser = async () => {
   const output = await exec('git config --get remote.origin.url');
   return output
@@ -53,8 +62,12 @@ const getMarkdownFiles = () =>
 const getJSONFiles = () =>
   fs.readdirSync(paths.ROOT).filter((filename) => filename.endsWith('.json'));
 
+const getDocsFiles = () =>
+  fs.readdirSync(paths.ROOT).filter((filename) => filename.endsWith('.html'));
+
 const main = async () => {
-  const files = [...getJSONFiles(), ...getMarkdownFiles()];
+  await installDeps();
+  const files = [...getJSONFiles(), ...getMarkdownFiles(), ...getDocsFiles()];
   const oldValues = {
     authorName: 'Erik Nielsen',
     authorEmail: 'erik@312development.com',
