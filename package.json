@@ -1,9 +1,10 @@
 {
   "name": "node-template",
   "version": "1.0.0",
-  "description": "GitHub template for basic node apps",
+  "description": "Barebones repo template for node.js apps",
   "main": "index.js",
   "scripts": {
+    "presetup": "npm ci",
     "setup": ".bin/setup",
     "test": "jest",
     "lint": "eslint --fix . && prettier --write .",
