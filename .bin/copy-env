@@ -1,0 +1,33 @@
+#!/usr/bin/env node
+const path = require('path');
+const fs = require('fs');
+const log = require('signale');
+const paths = require('./helpers/paths');
+
+const envPath = path.join(paths.ROOT, '.env');
+const envSamplePath = path.join(paths.ROOT, '.env.sample');
+
+const formatEnv = () => {
+  const content = fs.readFileSync(envPath, 'utf8');
+  const newContent = content.replace(/'/g, '"');
+  fs.writeFileSync(envPath, newContent, 'utf8');
+  log.success('Formatted .env');
+};
+
+const copyEnv = () => {
+  const content = fs.readFileSync(envPath, 'utf8');
+  const newContent = content.replace(/"(.*?)"/g, '""');
+  fs.writeFileSync(envSamplePath, newContent, 'utf8');
+  log.success('Copied safe version of .env to .env.sample');
+};
+
+const main = () => {
+  if (!fs.existsSync(envPath)) {
+    log.warn('No .env file found');
+    return;
+  }
+  formatEnv();
+  copyEnv();
+};
+
+main();

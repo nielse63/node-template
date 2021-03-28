@@ -1,0 +1,6 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+.bin/copy-env
+git add .env.sample
+npx lint-staged
