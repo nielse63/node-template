@@ -4,6 +4,7 @@
   "description": "GitHub template for basic node apps",
   "main": "index.js",
   "scripts": {
+    "setup": ".bin/setup",
     "test": "jest",
     "lint": "eslint --fix . && prettier --write .",
     "start": "node index.js",
