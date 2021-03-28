@@ -16,9 +16,12 @@
     "type": "git",
     "url": "git+https://github.com/nielse63/node-template.git"
   },
-  "keywords": [],
+  "keywords": [
+    "node",
+    "template"
+  ],
   "author": "Erik Nielsen <erik@312development.com>",
-  "license": "ISC",
+  "license": "Apache License 2.0",
   "bugs": {
     "url": "https://github.com/nielse63/node-template/issues"
   },

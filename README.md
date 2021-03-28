@@ -1,6 +1,6 @@
 # node-template
 
-![Node.js CI](https://github.com/nielse63/node-template/workflows/Node.js%20CI/badge.svg)
+[![Github Actions](https://img.shields.io/github/workflow/status/nielse63/node-template/Node.js)](https://github.com/nielse63/node-template/actions/workflows/node.js.yml) ![David](https://img.shields.io/david/nielse63/node-template)
 
 > Barebones repo template for node.js apps
 
