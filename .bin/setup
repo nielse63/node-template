@@ -43,7 +43,7 @@ const getNewValues = async () => {
 };
 
 const findAndReplace = (filename, oldValues, newValues) => {
-  const abspath = path.resolve(__dirname, filename);
+  const abspath = path.resolve(paths.ROOT, filename);
   const content = fs.readFileSync(abspath, 'utf8');
   let newContent = content;
   Object.entries(oldValues).forEach(([key, oldValue]) => {
