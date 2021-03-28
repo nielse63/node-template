@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint --fix . && prettier --write .",
-    "start": "node index.js"
+    "start": "node index.js",
+    "release": "dotenv release-it --dry-run"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "signale": "^1.4.0"
   },
   "devDependencies": {
+    "dotenv-cli": "^4.0.0",
     "eslint": "^7.20.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^7.2.0",
