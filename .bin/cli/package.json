@@ -1,0 +1,17 @@
+{
+  "name": "@node-template/cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "globby": "^11.0.3",
+    "inquirer": "^8.0.0",
+    "signale": "^1.4.0"
+  }
+}

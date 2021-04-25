@@ -4,8 +4,9 @@
   "description": "Barebones repo template for node.js apps",
   "main": "index.js",
   "scripts": {
-    "presetup": "npm ci",
-    "setup": ".bin/setup",
+    "presetup": "cd .bin/cli && npm ci",
+    "setup": "node .bin/cli/index.js",
+    "postsetup": "npm ci",
     "test": "jest",
     "lint": "eslint --fix . && prettier --write .",
     "start": "node index.js",
@@ -18,9 +19,13 @@
   },
   "keywords": [
     "node",
-    "template"
+    "template",
+    "github-template"
   ],
-  "author": "Erik Nielsen <erik@312development.com>",
+  "author": {
+    "name": "Erik Nielsen",
+    "email": "erik@312development.com"
+  },
   "license": "Apache License 2.0",
   "bugs": {
     "url": "https://github.com/nielse63/node-template/issues"
