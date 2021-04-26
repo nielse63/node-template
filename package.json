@@ -4,8 +4,8 @@
   "description": "Barebones repo template for node.js apps",
   "main": "index.js",
   "scripts": {
-    "presetup": "cd .bin/cli && npm ci",
-    "setup": "node .bin/cli/index.js",
+    "presetup": "cd .bin/cli && npm ci --prod",
+    "setup": "node .bin/cli/setup.js",
     "postsetup": "npm ci",
     "test": "jest",
     "lint": "eslint --fix . && prettier --write .",
