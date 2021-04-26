@@ -33,6 +33,8 @@ describe('setup', () => {
       const newFile = fakeFiles[i];
       fs.copyFileSync(file, newFile);
     });
+    console.log('fake repo path:', fakeRepo);
+    console.log('fake repo files:', fs.readdirSync(fakeRepo));
   });
 
   afterAll(() => {

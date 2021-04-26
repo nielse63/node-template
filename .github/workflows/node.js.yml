@@ -16,7 +16,6 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
-    environment: github-actions
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js
@@ -32,4 +31,9 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm test
-      - run: cd .bin/cli && npm ci && npm test
+      # - run: |
+      #     git config --add user.name 'test user'
+      #     git config --add user.email 'test@test.com'
+      #     cd .bin/cli
+      #     npm ci
+      #     npm test

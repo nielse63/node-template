@@ -94,6 +94,10 @@ const prompt = async (options) => {
 };
 
 const findAndReplaceInFile = (find, replace, file) => {
+  if (!fs.existsSync(file)) {
+    console.warn(`${file} does not exist`);
+    return;
+  }
   if (find === replace) return;
   const content = fs.readFileSync(file, 'utf8');
   if (!content.includes(find)) return;
