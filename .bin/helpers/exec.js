@@ -6,5 +6,5 @@ module.exports = async (cmd) => {
   if (stderr) {
     throw new Error(stderr);
   }
-  return stdout;
+  return stdout.trim();
 };

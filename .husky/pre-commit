@@ -5,9 +5,5 @@
 .bin/copy-env
 git add .env.sample
 
-# copy and add readme
-cp README.md docs/README.md
-git add docs/README.md
-
 # lint files
 npx lint-staged
