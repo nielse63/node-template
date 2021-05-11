@@ -36,7 +36,7 @@
     "npm": ">=6"
   },
   "dependencies": {
-    "dotenv": "^8.2.0",
+    "dotenv": "^9.0.2",
     "signale": "^1.4.0"
   },
   "devDependencies": {
