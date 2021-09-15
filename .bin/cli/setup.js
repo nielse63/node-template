@@ -80,14 +80,6 @@ const prompt = async (options) => {
       },
       when: !options.githubUser,
     },
-    // {
-    //   type: 'input',
-    //   name: 'keywords',
-    //   message: 'Keywords',
-    //   default() {
-    //     return defaultGithubUser;
-    //   },
-    // },
   ]);
 
   return { ...options, ...answers };
@@ -101,8 +93,9 @@ const findAndReplaceInFile = (find, replace, file) => {
   if (find === replace) return;
   const content = fs.readFileSync(file, 'utf8');
   if (!content.includes(find)) return;
-  // console.log(`Replacing ${find} with ${replace} in ${file}`);
-  cp.execSync(`sed -i '' -e 's/${find}/${replace}/g' ${file}`);
+  if (fs.existsSync(file)) {
+    cp.execSync(`sed -i '' -e 's/${find}/${replace}/g' ${file}`);
+  }
 };
 
 const findAndReplace = async (appRoot, answers) => {
