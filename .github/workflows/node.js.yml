@@ -31,9 +31,9 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm test
-      - run: |
-          git config --add user.name 'test user'
-          git config --add user.email 'test@test.com'
-          cd .bin/cli
-          npm ci
-          npm test
+      # - run: |
+      #     git config --add user.name 'test user'
+      #     git config --add user.email 'test@test.com'
+      #     cd .bin/cli
+      #     npm ci
+      #     npm test
