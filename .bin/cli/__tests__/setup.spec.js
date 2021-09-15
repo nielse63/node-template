@@ -4,10 +4,8 @@ const setup = require('../setup');
 const pkg = require('../../../package.json');
 
 // vars
-const root = path.resolve(__dirname, '../../..');
 const fakeRepo = path.resolve(__dirname, 'fake-repo');
 const basenames = ['package.json', 'README.md'];
-const srcFiles = basenames.map((file) => path.join(root, file));
 const fakeFiles = basenames.map((file) => path.join(fakeRepo, file));
 const options = {
   name: 'fake-repo',
@@ -26,24 +24,6 @@ const oldValues = {
 };
 
 describe('setup', () => {
-  beforeAll(() => {
-    // copy fakeFiles into fake repo
-    srcFiles.forEach((file, i) => {
-      if (!fs.existsSync(file)) return;
-      const newFile = fakeFiles[i];
-      fs.copyFileSync(file, newFile);
-    });
-    console.log('fake repo path:', fakeRepo);
-    console.log('fake repo files:', fs.readdirSync(fakeRepo));
-  });
-
-  afterAll(() => {
-    fakeFiles.forEach((file) => {
-      if (!fs.existsSync(file)) return;
-      fs.unlinkSync(file);
-    });
-  });
-
   it('should find and replace name', async () => {
     const valuesArray = Object.entries(options)
       .filter(([, value]) => value !== 'root')
