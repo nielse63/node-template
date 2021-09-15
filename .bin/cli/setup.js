@@ -144,7 +144,7 @@ program
   .option('--root <value>', 'Root directory of app', process.cwd());
 
 program.parse(process.argv);
-program.version('1.0.0');
+program.version(pkg.version);
 
 if (!module.parent) {
   const options = program.opts();

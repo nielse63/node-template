@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "pretest": "./pretest.sh",
     "test": "jest"
   },
   "keywords": [],
