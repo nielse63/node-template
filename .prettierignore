@@ -1,3 +1,4 @@
 !.*.js
 !.bin/
 package-lock.json
+dist

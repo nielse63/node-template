@@ -1,11 +1,11 @@
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '../..');
-const packages = path.join(ROOT, 'packages');
+const src = path.join(ROOT, 'src');
 const cache = path.join(ROOT, '.cache');
 
 module.exports = {
   ROOT,
-  packages,
+  src,
   cache,
 };
