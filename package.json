@@ -40,7 +40,7 @@
     "signale": "^1.4.0"
   },
   "devDependencies": {
-    "dotenv-cli": "^7.1.0",
+    "dotenv-cli": "^7.2.1",
     "eslint": "^8.36.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.8.0",
